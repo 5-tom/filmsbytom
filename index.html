@@ -126,7 +126,7 @@
 			(async function () {
 				const trainsDiv = document.getElementById("trains");
 				const trainDates = await fetch(`${window.location.href}/trains`);
-				trainsDiv.textContent += await b.text();
+				trainsDiv.textContent += await trainDates.text();
 			})();
 		</script>
 	</body>
