@@ -22,4 +22,4 @@ app.get("/trains", async (req, res) => {
 //
 api.use("/api", app);
 api.listen(3000);
-export const handler = serverless(app);
+export const handler = serverless(api);
