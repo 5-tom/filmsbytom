@@ -11,7 +11,7 @@ app.get("/trains", async (req, res) => {
 		);
 		const bookingWindowRegex = /{"bookingWindows":.*}/;
 		const bookingWindow = ticketAlert.data.match(bookingWindowRegex);
-		return res.json(JSON.parse(match[0]));
+		return res.json(JSON.parse(bookingWindow[0]));
 	} catch (err) {
 		console.log(err);
 		return res.send("Failed to get data.");
