@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
@@ -115,7 +115,9 @@
 				</span>
 			</div>
 		</div>
-		<div id="trains"></div>
+		<div>
+			<ul id="trains"></ul>
+		</div>
 		<footer style="text-align: center">
 			© 2023 Tom Honour.
 			<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"
@@ -124,9 +126,17 @@
 		</footer>
 		<script>
 			(async function () {
-				const trainsDiv = document.getElementById("trains");
-				const trainDates = await fetch(`${window.location.href}/trains`);
-				trainsDiv.textContent += await trainDates.text();
+				const trainsUnorderedList = document.getElementById("trains");
+				const trainFetch = await fetch("/trains");
+				const trainDates = await trainFetch.json();
+				trainDates.bookingWindows.forEach((bookingWindow) => {
+					trainsUnorderedList.insertAdjacentHTML(
+						"beforeend",
+						`<li>
+							${bookingWindow.toc} - ${bookingWindow.date}
+						</li>`
+					);
+				});
 			})();
 		</script>
 	</body>

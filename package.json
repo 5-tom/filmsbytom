@@ -1,7 +1,7 @@
 {
 	"type": "module",
 	"scripts": {
-		"dev": "nodemon netlify/functions/trains.js"
+		"dev": "concurrently \"vite\" \"nodemon netlify/functions/trains.js\""
 	},
 	"dependencies": {
 		"axios": "^1.6.2",
@@ -9,6 +9,8 @@
 		"serverless-http": "^3.2.0"
 	},
 	"devDependencies": {
-		"nodemon": "^3.0.1"
+		"concurrently": "^8.2.2",
+		"nodemon": "^3.0.1",
+		"vite": "^5.0.0"
 	}
 }
