@@ -3,7 +3,7 @@ export default defineConfig({
 	appType: "mpa",
 	server: {
 		proxy: {
-			"/trains": "http://localhost:3000"
+			"/api": "http://localhost:3000"
 		}
 	}
 });

@@ -1,8 +1,9 @@
-import express from "express";
+import express, { Router } from "express";
 import axios from "axios";
 import serverless from "serverless-http";
-
-const app = express();
+const api = express();
+const app = Router();
+//
 
 app.get("/trains", async (req, res) => {
 	try {
@@ -18,5 +19,7 @@ app.get("/trains", async (req, res) => {
 	}
 });
 
-app.listen("3000");
+//
+api.use("/api", app);
+api.listen(3000);
 export const handler = serverless(app);
