@@ -1,5 +1,5 @@
 [functions]
-	external_node_modules = ["axios", "express", "serverless-http"]
+	external_node_modules = ["axios", "express", "jsdom", "serverless-http"]
 	node_bundler = "esbuild"
 
 [[redirects]]

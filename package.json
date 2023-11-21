@@ -7,6 +7,7 @@
 	"dependencies": {
 		"axios": "latest",
 		"express": "latest",
+		"jsdom": "latest",
 		"serverless-http": "latest"
 	},
 	"devDependencies": {
