@@ -10,7 +10,7 @@ const app = Router();
 function tableToJSON(html) {
 	const DOM = new JSDOM(html);
 	const document = DOM.window.document;
-	const table = doc.querySelector("table");
+	const table = document.querySelector("table");
 	const result = { bookingWindows: [] };
 	table.querySelectorAll("tr").forEach((row) => {
 		const cells = row.querySelectorAll("td");
