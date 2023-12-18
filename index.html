@@ -35,6 +35,21 @@
 			.grow:hover {
 				font-size: 2.5em;
 			}
+			#links {
+				position: absolute;
+				width: 100%;
+			}
+			@media only screen and (max-width: 768px) {
+				.grid-container {
+					display: initial;
+				}
+				.grid-container > div {
+					padding: 0 20px;
+				}
+				#links {
+					position: initial;
+				}
+			}
 		</style>
 		<link
 			rel="stylesheet"
@@ -58,7 +73,7 @@
 				<img src="./photo.jpeg" style="border-radius: 50%" />
 				<h1>Tom Honour</h1>
 				<h3>Web Developer</h3>
-				<div style="position: absolute; width: 100%">
+				<div id="links">
 					<a href="mailto:tom5@posteo.net"
 						><i class="bi-envelope-fill icon grow"></i
 					></a>
