@@ -11,15 +11,18 @@ function tableToJSON(html) {
 	const DOM = new JSDOM(html);
 	const document = DOM.window.document;
 	const table = document.querySelector("table");
-	const result = { bookingWindows: [] };
+	const arr = { bookingWindows: [] };
 	table.querySelectorAll("tr").forEach((row) => {
 		const cells = row.querySelectorAll("td");
-		result.bookingWindows.push({
+		arr.bookingWindows.push({
 			toc: cells[0].textContent,
 			date: cells[1].textContent
 		});
 	});
-	return result;
+	const slicedArr = {
+		bookingWindows: arr.bookingWindows.slice(1, arr.bookingWindows.length)
+	};
+	return slicedArr;
 }
 
 app.get("/trains", async (req, res) => {
