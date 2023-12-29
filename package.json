@@ -3,7 +3,7 @@
 	"scripts": {
 		"dev": "vite",
 		"be": "nodemon --watch ./backend -e '*' --exec \"npm run be:build && node netlify/functions/api.js\"",
-		"be:build": "esbuild ./backend/api.js --bundle --external:./node_modules/* --format=esm --outfile=./netlify/functions/api.js"
+		"be:build": "esbuild ./backend/api.js --bundle --packages=external --format=esm --outfile=./netlify/functions/api.js"
 	},
 	"dependencies": {
 		"axios": "latest",

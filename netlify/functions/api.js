@@ -1,11 +1,11 @@
 // backend/api.js
-import express, { Router as Router2 } from "../../node_modules/express/index.js";
-import serverless from "../../node_modules/serverless-http/serverless-http.js";
+import express, { Router as Router2 } from "express";
+import serverless from "serverless-http";
 
 // backend/routes/trains.js
-import { Router } from "../../node_modules/express/index.js";
-import axios from "../../node_modules/axios/index.js";
-import { JSDOM } from "../../node_modules/jsdom/lib/api.js";
+import { Router } from "express";
+import axios from "axios";
+import { JSDOM } from "jsdom";
 var router = Router();
 router.get("/", async (req, res) => {
   try {
