@@ -67,7 +67,7 @@
 				z-index: 1;
 			"
 		>
-			<h1 style="margin-top: 0; padding: 10px">Tom Honour</h1>
+			<h1 style="margin: 0; padding: 10px">Tom Honour</h1>
 		</nav>
 		<div class="grid-container">
 			<div class="item1" style="position: relative">
@@ -106,42 +106,82 @@
 			</div>
 			<div class="item4">
 				<h1>Education</h1>
-				<i class="bi-mortarboard-fill icon"></i>
-				<span
+				<div
 					style="
-						display: inline-block;
-						vertical-align: top;
-						margin-left: 10px;
-						padding-top: 10px;
+						display: grid;
+						grid-template-columns: max-content auto;
+						gap: 10px;
 					"
 				>
-					<span style="font-weight: bold"
-						>BCS Level 4 Software Developer, 2024</span
-					>
-				</span>
-				<br />
-				<i class="bi-mortarboard-fill icon"></i>
-				<span
-					style="
-						display: inline-block;
-						vertical-align: top;
-						margin-left: 10px;
-						padding-top: 10px;
-					"
-				>
-					<span style="font-weight: bold">B.S. in Biology, 2022</span><br />
-					Bournemouth University
-				</span>
+					<div>
+						<i class="bi-mortarboard-fill icon"></i>
+					</div>
+					<div>
+						<span style="font-weight: bold"
+							>BCS Level 4 Software Developer, 2024</span
+						>
+					</div>
+					<div>
+						<i class="bi-mortarboard-fill icon"></i>
+					</div>
+					<div>
+						<span style="font-weight: bold">B.S. in Biology, 2022</span><br />
+						Bournemouth University
+					</div>
+				</div>
 			</div>
 		</div>
 		<div style="padding: 0 20px">
 			<!-- <ul id="trains"></ul> -->
-			<h1>My APIs</h1>
+			<h1 style="margin-top: 0">My APIs</h1>
 			<ol>
 				<li><a href="/api/trains">Advance train ticket booking window</a></li>
 			</ol>
 		</div>
-		<footer style="text-align: center">
+		<div style="padding: 0 20px">
+			<h1>Learn Linux</h1>
+			<ul>
+				<li>
+					<a href="https://mywiki.wooledge.org/EnglishFrontPage">BashGuide</a>
+				</li>
+				<li>
+					<a href="https://www.youtube.com/watch?v=dDwXnB6XeiA"
+						>"Everything is a file" in UNIX</a
+					>
+				</li>
+				<li>
+					<a href="https://www.youtube.com/watch?v=fYQBvjYQ63U"
+						>Creating systemd Service Files</a
+					>
+				</li>
+				<li>
+					<a href="https://www.youtube.com/watch?v=DFreHo3UCD0"
+						>Understanding Linux named pipes</a
+					>
+				</li>
+				<li>
+					<a href="https://www.youtube.com/watch?v=VvHvMraWbKQ"
+						>Simple Cron Job Creation</a
+					>
+				</li>
+				<li>
+					<a href="https://www.youtube.com/watch?v=CK3crcvmQEs"
+						>Network Sockets</a
+					>
+				</li>
+				<li>
+					<a href="https://www.youtube.com/watch?v=mV1TNyWGQQ8"
+						>X Window System</a
+					>
+				</li>
+				<li>
+					<a href="https://en.wikipedia.org/wiki/List_of_widget_toolkits"
+						>List of widget toolkits</a
+					>
+				</li>
+			</ul>
+		</div>
+		<footer style="text-align: center; padding-bottom: 10px">
 			© 2023 Tom Honour.
 			<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"
 				>BY-NC-SA 4.0</a
