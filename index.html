@@ -35,6 +35,7 @@
 			}
 			.grow:hover {
 				font-size: 2.5em;
+				transform: scale(1.25);
 			}
 			#links {
 				position: absolute;
@@ -49,6 +50,9 @@
 				}
 				#links {
 					position: initial;
+				}
+				#firstheading {
+					margin-top: 0;
 				}
 			}
 		</style>
@@ -88,11 +92,14 @@
 						><i class="bi-linkedin icon grow"></i
 					></a>
 					<a href="https://leetcode.com/5-tom/"
-						><i class="bi-journal-code icon grow"></i
-					></a>
+						><img src="./leetcode.png" class="grow"
+					/></a>
 					<a href="https://gist.github.com/5-tom"
 						><i class="bi-github icon grow"></i
 					></a>
+					<a href="https://www.npmjs.com/~tomhonour"
+						><img src="./npm.png" class="grow"
+					/></a>
 				</div>
 			</div>
 			<div class="item2">
@@ -136,7 +143,7 @@
 		</div>
 		<div style="padding: 0 20px">
 			<!-- <ul id="trains"></ul> -->
-			<h1 style="margin-top: 0">My APIs</h1>
+			<h1 id="firstheading">My APIs</h1>
 			<ol>
 				<li><a href="/api/trains">Advance train ticket booking window</a></li>
 			</ol>
