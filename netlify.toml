@@ -10,3 +10,8 @@
 	from = "/api/*"
 	to = "/.netlify/functions/api/:splat"
 	status = 200
+
+[[redirects]]
+	from = "/react/*"
+	to = "/react.html"
+	status = 200
