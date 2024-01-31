@@ -14,7 +14,7 @@ export default function Root() {
 	const { isLoaded, isSignedIn } = useAuth();
 	const navigate = useNavigate();
 	useEffect(() => {
-		if (location.pathname === "/") {
+		if (location.pathname === "/react") {
 			if (isLoaded && isSignedIn) {
 				navigate("/home");
 			}

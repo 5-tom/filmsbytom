@@ -27,7 +27,7 @@ const router = createBrowserRouter([
 
 const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
 
-ReactDOM.createRoot(document.getElementById("root")).render(
+ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
 	<React.StrictMode>
 		<ClerkProvider publishableKey={PUBLISHABLE_KEY}>
 			<RouterProvider router={router} />
