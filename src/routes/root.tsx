@@ -16,7 +16,7 @@ export default function Root() {
 	useEffect(() => {
 		if (location.pathname === "/react") {
 			if (isLoaded && isSignedIn) {
-				navigate("/home");
+				navigate("/react/home");
 			}
 		}
 	});
