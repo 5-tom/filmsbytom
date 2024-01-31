@@ -1,14 +1,23 @@
 {
 	"type": "module",
 	"scripts": {
+		"build": "vite build",
 		"dev": "vite",
 		"be": "nodemon --watch ./backend -e '*' --exec \"npm run be:build && node netlify/functions/api.js\"",
 		"be:build": "esbuild ./backend/api.js --bundle --packages=external --format=esm --outfile=./netlify/functions/api.js"
 	},
 	"dependencies": {
+		"@clerk/clerk-react": "^4.30.3",
+		"@emotion/react": "^11.11.3",
+		"@emotion/styled": "^11.11.0",
+		"@mui/material": "^5.15.6",
+		"@vitejs/plugin-react": "^4.2.1",
 		"axios": "latest",
 		"express": "latest",
 		"jsdom": "latest",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0",
+		"react-router-dom": "^6.21.3",
 		"serverless-http": "latest"
 	},
 	"devDependencies": {

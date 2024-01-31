@@ -1,8 +1,12 @@
+[build]
+	command = "npm run build"
+	publish = "dist"
+
 [functions]
 	external_node_modules = ["axios", "express", "jsdom", "serverless-http"]
 	node_bundler = "esbuild"
 
 [[redirects]]
-	from = "/*"
-	to = "/.netlify/functions/:splat"
+	from = "/api/*"
+	to = "/.netlify/functions/api/:splat"
 	status = 200
