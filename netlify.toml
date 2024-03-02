@@ -3,7 +3,7 @@
 	publish = "dist"
 
 [functions]
-	external_node_modules = ["axios", "express", "jsdom", "serverless-http"]
+	external_node_modules = ["axios", "express", "jsdom", "serverless-http", "multer"]
 	node_bundler = "esbuild"
 
 [[redirects]]
