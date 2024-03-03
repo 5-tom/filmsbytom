@@ -3,7 +3,10 @@ import { Button, Dialog, TextField } from "@mui/material";
 
 export default function Home() {
 	const [open, setOpen] = useState(false);
-	const [formId, setFormId] = useState("");
+	const [request, setRequest] = useState({
+		body: new FormData(),
+		route: ""
+	});
 	const [response, setResponse] = useState("");
 
 	function handleClose() {
@@ -11,9 +14,9 @@ export default function Home() {
 	}
 
 	async function submit() {
-		fetch("/api/form", {
+		fetch(request.route, {
 			method: "post",
-			body: new FormData(document.getElementById(formId) as HTMLFormElement)
+			body: request.body
 		}).then(async function (res) {
 			setResponse(await res.json());
 		});
@@ -23,22 +26,22 @@ export default function Home() {
 	return (
 		<>
 			<span>Home</span>
-			<br />
-
-			{String(response["first_name"])}
-
 			<form
-				id="form1"
 				onSubmit={function (e) {
 					e.preventDefault();
-					setFormId(e.currentTarget.id);
+					setRequest({
+						body: new FormData(e.currentTarget),
+						route: "/api/form"
+					});
 					setOpen(true);
 				}}
 			>
-				<TextField name="first_name" />
+				<TextField name="fname" required />
 				<Button type="submit">Submit</Button>
 			</form>
-
+			<span>Response:</span>
+			<br />
+			{String(response["fname"])}
 			<Dialog onClose={handleClose} open={open}>
 				<Button onClick={submit}>Submit</Button>
 				<Button onClick={handleClose}>Close</Button>
