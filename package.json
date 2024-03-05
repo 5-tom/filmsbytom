@@ -18,7 +18,9 @@
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
 		"react-router-dom": "^6.21.3",
-		"serverless-http": "latest"
+		"serverless-http": "latest",
+		"zod": "^3.22.4",
+		"zodix": "^0.4.4"
 	},
 	"devDependencies": {
 		"@types/react": "^18.2.48",
