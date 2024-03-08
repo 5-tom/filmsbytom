@@ -6,6 +6,7 @@ import { ClerkProvider } from "@clerk/clerk-react";
 import SignIn from "./routes/SignIn";
 import Root from "./routes/root";
 import Home from "./routes/Home";
+import DiffViewer from "./routes/diff";
 
 const router = createBrowserRouter([
 	{
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
 			{
 				path: "home",
 				element: <Home />
+			},
+			{
+				path: "diff",
+				element: <DiffViewer />
 			}
 		]
 	}
