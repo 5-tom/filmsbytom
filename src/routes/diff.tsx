@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Diff, Hunk, markEdits, parseDiff, tokenize } from "react-diff-view";
+import FileHeader from "../components/FileHeader";
 import "./diff.css";
 
 function DiffViewer() {
@@ -34,10 +35,12 @@ function DiffViewer() {
 }
 export default DiffViewer;
 
-function renderFile({ oldRevision, newRevision, type, hunks }) {
+function renderFile(file) {
+	const { oldRevision, newRevision, type, hunks } = file;
 	return (
 		<>
 			<br />
+			<FileHeader file={file} />
 			<div>
 				<Diff
 					key={oldRevision + "-" + newRevision}
