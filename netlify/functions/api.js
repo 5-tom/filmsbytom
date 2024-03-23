@@ -1,6 +1,5 @@
 // backend/api.js
 import express, { Router as Router2 } from "express";
-import multer from "multer";
 import serverless from "serverless-http";
 
 // backend/routes/trains.js
@@ -44,9 +43,6 @@ function tableToJSON(html) {
 var api = express();
 var app = Router2();
 app.use("/trains", trains_default);
-app.post("/form", multer().none(), function(req, res) {
-  return res.send(req.body);
-});
 api.use("/api", app);
 api.listen(3e3);
 var handler = serverless(api);
