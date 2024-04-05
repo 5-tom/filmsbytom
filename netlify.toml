@@ -3,7 +3,6 @@
 	node_bundler = "esbuild"
 
 [[redirects]]
-from = "*"
-to = "https://en.wikipedia.org/wiki/Main_Page"
-status = 301
-force = true
+	from = "/api/*"
+	to = "/.netlify/functions/api/:splat"
+	status = 200
