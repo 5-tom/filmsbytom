@@ -3,6 +3,6 @@
 	node_bundler = "esbuild"
 
 [[redirects]]
-from = "https://filmsbytom.com*"
+from = "*!"
 to = "https://en.wikipedia.org/wiki/Main_Page"
 status = 301
