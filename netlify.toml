@@ -3,6 +3,7 @@
 	node_bundler = "esbuild"
 
 [[redirects]]
-from = "*!"
+from = "*"
 to = "https://en.wikipedia.org/wiki/Main_Page"
 status = 301
+force = true
