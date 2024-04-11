@@ -9,11 +9,9 @@ export default defineConfig({
 	},
 	plugins: [react()],
 	build: {
-		outDir: "..",
+		outDir: "..", // this breaks hot reload!
 		rollupOptions: {
-			input: {
-				app: "portfolio.html"
-			}
+			input: "portfolio.html"
 		}
 	}
 });
