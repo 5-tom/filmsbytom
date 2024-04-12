@@ -1,5 +1,7 @@
 node_modules
 package-lock.json
 
-assets
+/assets
 /portfolio.html
+/*.jpg
+/*.png
