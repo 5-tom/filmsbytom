@@ -5,6 +5,8 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
+import Grid from "@mui/material/Grid";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 import { Terminal } from "@mui/icons-material";
 
@@ -79,66 +81,68 @@ const projects = [
 ];
 
 export default function App() {
+	const matches = useMediaQuery(theme.breakpoints.up("md"));
 	return (
 		<ThemeProvider theme={theme}>
-			<div
-				style={{
-					display: "grid",
-					gridTemplateColumns: "1fr 1fr 1fr",
-					gap: "10px",
-					padding: "0px 100px"
-				}}
-			>
-				<div style={{ fontFamily: "sans-serif", gridColumn: "1 / span 3" }}>
+			<Grid container rowSpacing={1}>
+				<Grid item xs={12} sx={{ fontFamily: "sans-serif" }}>
 					<h3>Write-ups for my TypeScript and webdev projects coming soon!</h3>
-				</div>
+				</Grid>
 				{projects.map(
 					({ alt, image, title, body, btn1, btn2, btn3 }, index) => {
 						let col = index % 3;
-						let style;
-						if (col === 0) {
-							style = { justifySelf: "end" };
-						} else if (col === 1) {
-							style = { justifySelf: "center" };
+						let style = {
+							display: "flex"
+						};
+						if (matches) {
+							if (col === 0) {
+								style.justifyContent = "end";
+							} else if (col === 1) {
+								style.justifyContent = "center";
+							} else {
+								style.justifyContent = "start";
+							}
 						} else {
-							style = { justifySelf: "start" };
+							style.justifyContent = "center";
 						}
 						return (
-							<Card sx={{ maxWidth: 345 }} key={title} style={style}>
-								<CardMedia
-									component="img"
-									alt={alt}
-									height="140"
-									image={image}
-								/>
-								<CardContent>
-									<Typography gutterBottom variant="h5" component="div">
-										<Terminal /> {title}
-									</Typography>
-									<Typography variant="body2" color="text.secondary">
-										{body}
-									</Typography>
-								</CardContent>
-								<CardActions>
-									<a href={btn1.link}>
-										<Button size="small">{btn1.name}</Button>
-									</a>
-									{btn2 && (
-										<a href={btn2.link}>
-											<Button size="small">{btn2.name}</Button>
+							<Grid item xs={12} sm={6} md={4} sx={style} key={title}>
+								<Card sx={{ maxWidth: 345 }}>
+									<CardMedia
+										component="img"
+										alt={alt}
+										height="140"
+										image={image}
+									/>
+									<CardContent>
+										<Typography gutterBottom variant="h5" component="div">
+											<Terminal /> {title}
+										</Typography>
+										<Typography variant="body2" color="text.secondary">
+											{body}
+										</Typography>
+									</CardContent>
+									<CardActions>
+										<a href={btn1.link}>
+											<Button size="small">{btn1.name}</Button>
 										</a>
-									)}
-									{btn3 && (
-										<a href={btn3.link}>
-											<Button size="small">{btn3.name}</Button>
-										</a>
-									)}
-								</CardActions>
-							</Card>
+										{btn2 && (
+											<a href={btn2.link}>
+												<Button size="small">{btn2.name}</Button>
+											</a>
+										)}
+										{btn3 && (
+											<a href={btn3.link}>
+												<Button size="small">{btn3.name}</Button>
+											</a>
+										)}
+									</CardActions>
+								</Card>
+							</Grid>
 						);
 					}
 				)}
-			</div>
+			</Grid>
 		</ThemeProvider>
 	);
 }
