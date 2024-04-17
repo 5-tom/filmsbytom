@@ -7,6 +7,7 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
 import useMediaQuery from "@mui/material/useMediaQuery";
+import Alert from "@mui/material/Alert";
 
 import { Terminal } from "@mui/icons-material";
 
@@ -30,12 +31,15 @@ const projects = [
 		btn2: {
 			name: "Read JavaScript version",
 			link: "https://github.com/5-tom/scripts-backup/blob/main/usr-local-bin/node/y.mjs"
+		},
+		metadata: {
+			maintained: true
 		}
 	},
 	{
 		alt: "kodi file structure",
 		image: "/kodi.png",
-		title: "(OLD) Organise movies to the Kodi recommendation",
+		title: "Organise movies to the Kodi recommendation",
 		body: "Kodi recommends that movie libraries be organised like: 'Dredd (2012)' > 'Dredd (2012).mkv'. This script batch renames and batch moves your movies to conform to Kodi's recommendation",
 		btn1: {
 			name: "Read bash version",
@@ -48,12 +52,15 @@ const projects = [
 		btn3: {
 			name: "Read recommendation",
 			link: "https://kodi.wiki/view/Naming_video_files/Movies"
+		},
+		metadata: {
+			maintained: false
 		}
 	},
 	{
 		alt: "mpv and filmon logos",
 		image: "/filmon.png",
-		title: "(OLD) TV using mpv, IPC, socat, and filmon",
+		title: "TV using mpv, IPC, socat, and filmon",
 		body: "After about 60 seconds of free TV, filmon returns a 403 status code. This script circumvents this restriction by fetching a new stream and directing it to the same mpv window",
 		btn1: {
 			name: "Read bash version",
@@ -66,16 +73,42 @@ const projects = [
 		btn3: {
 			name: "View YouTube video",
 			link: "https://www.youtube.com/watch?v=V8MN4QFs9fE"
+		},
+		metadata: {
+			maintained: false
 		}
 	},
 	{
 		alt: "GitHub Copilot for VSCodium logos",
 		image: "/copilot.png",
-		title: "(OLD) Install GitHub Copilot for VSCodium (snap)",
+		title: "Install GitHub Copilot for VSCodium (snap)",
 		body: "The Copilot extension can't be installed for VSCodium without a little bit of hacking!",
 		btn1: {
 			name: "Read code",
 			link: "https://github.com/5-tom/old-scripts/blob/main/copilot.sh"
+		},
+		metadata: {
+			maintained: false
+		}
+	},
+	{
+		alt: "pipes",
+		image: "/dataducts.jpg",
+		title: "LittlePipelines",
+		body: "Learn to code through pull request reviews.",
+		metadata: {
+			maintained: true,
+			comingSoon: true
+		}
+	},
+	{
+		alt: "pipes",
+		image: "/dataducts.jpg",
+		title: "DataDucts",
+		body: "Webmaster for a digital transformation company.",
+		metadata: {
+			maintained: true,
+			comingSoon: true
 		}
 	}
 ];
@@ -86,10 +119,13 @@ export default function App() {
 		<ThemeProvider theme={theme}>
 			<Grid container rowSpacing={1}>
 				<Grid item xs={12} sx={{ fontFamily: "sans-serif" }}>
+					<Button href="/" variant="contained">
+						Go back to Home
+					</Button>
 					<h3>Write-ups for my TypeScript and webdev projects coming soon!</h3>
 				</Grid>
 				{projects.map(
-					({ alt, image, title, body, btn1, btn2, btn3 }, index) => {
+					({ alt, image, title, body, btn1, btn2, btn3, metadata }, index) => {
 						let col = index % 3;
 						let style = {
 							display: "flex"
@@ -115,6 +151,14 @@ export default function App() {
 										image={image}
 									/>
 									<CardContent>
+										{!metadata.maintained && (
+											<Alert severity="warning">
+												This project isn't being maintained.
+											</Alert>
+										)}
+										{metadata.comingSoon && (
+											<Alert severity="info">Launch coming soon.</Alert>
+										)}
 										<Typography gutterBottom variant="h5" component="div">
 											<Terminal /> {title}
 										</Typography>
@@ -123,9 +167,11 @@ export default function App() {
 										</Typography>
 									</CardContent>
 									<CardActions>
-										<a href={btn1.link}>
-											<Button size="small">{btn1.name}</Button>
-										</a>
+										{btn1 && (
+											<a href={btn1.link}>
+												<Button size="small">{btn1.name}</Button>
+											</a>
+										)}
 										{btn2 && (
 											<a href={btn2.link}>
 												<Button size="small">{btn2.name}</Button>
