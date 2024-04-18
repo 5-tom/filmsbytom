@@ -7,11 +7,5 @@ export default defineConfig({
 			"/api": "http://localhost:3000"
 		}
 	},
-	plugins: [react()],
-	build: {
-		outDir: "..", // this breaks hot reload!
-		rollupOptions: {
-			input: "portfolio.html"
-		}
-	}
+	plugins: [react()]
 });
