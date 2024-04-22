@@ -24,12 +24,14 @@ function tableToJSON(html) {
 	const DOM = new JSDOM(html);
 	const document = DOM.window.document;
 	const table = document.querySelector("table");
-	const arr = { bookingWindows: [] };
-	table.querySelectorAll("tr").forEach((row) => {
+	const arr: { bookingWindows: Array<{ toc: string; date: string }> } = {
+		bookingWindows: []
+	};
+	table!.querySelectorAll("tr").forEach((row) => {
 		const cells = row.querySelectorAll("td");
 		arr.bookingWindows.push({
-			toc: cells[0].textContent,
-			date: cells[1].textContent
+			toc: cells[0].textContent!,
+			date: cells[1].textContent!
 		});
 	});
 	const slicedArr = {

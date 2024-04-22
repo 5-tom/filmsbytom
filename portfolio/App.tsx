@@ -126,9 +126,10 @@ export default function App() {
 				</Grid>
 				{projects.map(
 					({ alt, image, title, body, btn1, btn2, btn3, metadata }, index) => {
-						let col = index % 3;
+						const col = index % 3;
 						let style = {
-							display: "flex"
+							display: "flex",
+							justifyContent: "center"
 						};
 						if (matches) {
 							if (col === 0) {

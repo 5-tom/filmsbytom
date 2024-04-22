@@ -1,8 +1,8 @@
-// backend/api.js
+// backend/api.ts
 import express, { Router as Router2 } from "express";
 import serverless from "serverless-http";
 
-// backend/routes/trains.js
+// backend/routes/trains.ts
 import { Router } from "express";
 import axios from "axios";
 import { JSDOM } from "jsdom";
@@ -25,7 +25,9 @@ function tableToJSON(html) {
   const DOM = new JSDOM(html);
   const document = DOM.window.document;
   const table = document.querySelector("table");
-  const arr = { bookingWindows: [] };
+  const arr = {
+    bookingWindows: []
+  };
   table.querySelectorAll("tr").forEach((row) => {
     const cells = row.querySelectorAll("td");
     arr.bookingWindows.push({
@@ -39,7 +41,7 @@ function tableToJSON(html) {
   return slicedArr;
 }
 
-// backend/api.js
+// backend/api.ts
 var api = express();
 var app = Router2();
 app.use("/trains", trains_default);
