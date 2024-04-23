@@ -9,7 +9,7 @@ import Grid from "@mui/material/Grid";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import Alert from "@mui/material/Alert";
 
-import { Terminal } from "@mui/icons-material";
+import { Html, Javascript, Terminal } from "@mui/icons-material";
 
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 const theme = createTheme({
@@ -33,7 +33,8 @@ const projects = [
 			link: "https://github.com/5-tom/scripts-backup/blob/main/usr-local-bin/node/y.mjs"
 		},
 		metadata: {
-			maintained: true
+			maintained: true,
+			icons: ["terminal", "javascript"]
 		}
 	},
 	{
@@ -54,7 +55,8 @@ const projects = [
 			link: "https://kodi.wiki/view/Naming_video_files/Movies"
 		},
 		metadata: {
-			maintained: false
+			maintained: false,
+			icons: ["terminal", "javascript"]
 		}
 	},
 	{
@@ -75,7 +77,8 @@ const projects = [
 			link: "https://www.youtube.com/watch?v=V8MN4QFs9fE"
 		},
 		metadata: {
-			maintained: false
+			maintained: false,
+			icons: ["terminal", "javascript"]
 		}
 	},
 	{
@@ -88,7 +91,19 @@ const projects = [
 			link: "https://github.com/5-tom/old-scripts/blob/main/copilot.sh"
 		},
 		metadata: {
-			maintained: false
+			maintained: false,
+			icons: ["terminal", "javascript"]
+		}
+	},
+	{
+		alt: "Chart.js logo",
+		image: "/chartjs-logo.png",
+		title: "Advance Train Tickets Fare Tracking",
+		body: "See changes in train ticket fares between now and the end of the booking window.",
+		metadata: {
+			maintained: true,
+			comingSoon: true,
+			icons: ["html", "javascript"]
 		}
 	},
 	{
@@ -98,7 +113,8 @@ const projects = [
 		body: "Learn to code through pull request reviews.",
 		metadata: {
 			maintained: true,
-			comingSoon: true
+			comingSoon: true,
+			icons: ["html", "javascript"]
 		}
 	},
 	{
@@ -108,7 +124,8 @@ const projects = [
 		body: "Webmaster for a digital transformation company.",
 		metadata: {
 			maintained: true,
-			comingSoon: true
+			comingSoon: true,
+			icons: ["html", "javascript"]
 		}
 	}
 ];
@@ -161,7 +178,10 @@ export default function App() {
 											<Alert severity="info">Launch coming soon.</Alert>
 										)}
 										<Typography gutterBottom variant="h5" component="div">
-											<Terminal /> {title}
+											{metadata.icons.includes("terminal") && <Terminal />}
+											{metadata.icons.includes("html") && <Html />}
+											{metadata.icons.includes("javascript") && <Javascript />}
+											{title}
 										</Typography>
 										<Typography variant="body2" color="text.secondary">
 											{body}
