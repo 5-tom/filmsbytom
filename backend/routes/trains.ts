@@ -1,6 +1,9 @@
 import { Router } from "express";
 import axios from "axios";
 import { JSDOM } from "jsdom";
+import multer from "multer";
+
+import { fares } from "./fares";
 
 const router = Router();
 
@@ -17,6 +20,8 @@ router.get("/", async (req, res) => {
 		return res.send("Failed to get data.");
 	}
 });
+
+router.post("/fares", multer().none(), fares);
 
 export default router;
 

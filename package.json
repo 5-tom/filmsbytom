@@ -10,9 +10,13 @@
 		"axios": "latest",
 		"express": "latest",
 		"jsdom": "latest",
+		"multer": "latest",
 		"serverless-http": "latest"
 	},
 	"devDependencies": {
+		"@types/express": "latest",
+		"@types/jsdom": "latest",
+		"@types/multer": "latest",
 		"esbuild": "latest",
 		"nodemon": "latest",
 		"vite": "latest"

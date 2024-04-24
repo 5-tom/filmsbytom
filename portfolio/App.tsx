@@ -96,14 +96,25 @@ const projects = [
 		}
 	},
 	{
-		alt: "Chart.js logo",
-		image: "/chartjs-logo.png",
+		alt: "Screenshot of fares tracker",
+		image: "/fares_tracker.png",
 		title: "Advance Train Tickets Fare Tracking",
 		body: "See changes in train ticket fares between now and the end of the booking window.",
 		metadata: {
 			maintained: true,
-			comingSoon: true,
 			icons: ["html", "javascript"]
+		},
+		btn1: {
+			name: "Visit",
+			link: "/portfolio/fares"
+		},
+		btn2: {
+			name: "Read frontend code",
+			link: "https://github.com/5-tom/filmsbytom/blob/main/portfolio/Fares.tsx"
+		},
+		btn3: {
+			name: "Read backend code",
+			link: "https://github.com/5-tom/filmsbytom/blob/main/backend/routes/fares.ts"
 		}
 	},
 	{
