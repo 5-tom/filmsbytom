@@ -118,6 +118,29 @@ const projects = [
 		}
 	},
 	{
+		alt: "GJS logo",
+		image: "/jsgnome.png",
+		title: "Unnamed GJS Project",
+		body: "GJS is a language binding for JavaScript and GTK. It lets you write native Linux desktop apps with JavaScript.",
+		metadata: {
+			maintained: true,
+			comingSoon: true,
+			icons: ["javascript"]
+		},
+		btn1: {
+			name: "Watch talk",
+			link: "https://www.youtube.com/watch?v=YqmmK16rIm4&t=10"
+		},
+		btn2: {
+			name: "Read README",
+			link: "https://gitlab.gnome.org/GNOME/gjs/-/blob/master/doc/README.md"
+		},
+		btn3: {
+			name: "GTK4 + GJS Book",
+			link: "https://rmnvgr.gitlab.io/gtk4-gjs-book/"
+		}
+	},
+	{
 		alt: "pipes",
 		image: "/dataducts.jpg",
 		title: "LittlePipelines",
