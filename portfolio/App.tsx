@@ -118,6 +118,20 @@ const projects = [
 		}
 	},
 	{
+		alt: "Wood Job! movie poster in windowboxd",
+		image: "/woodjob.png",
+		title: "windowboxd",
+		body: "Alternative frontend for letterboxd. Requires no JavaScript. Inspired by invidious and nitter.",
+		metadata: {
+			maintained: true,
+			icons: ["html", "javascript"]
+		},
+		btn1: {
+			name: "Go to repository",
+			link: "https://github.com/5-tom/windowboxd"
+		}
+	},
+	{
 		alt: "GJS logo",
 		image: "/jsgnome.png",
 		title: "Unnamed GJS Project",
