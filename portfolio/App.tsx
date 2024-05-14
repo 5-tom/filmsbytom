@@ -164,18 +164,18 @@ const projects = [
 			comingSoon: true,
 			icons: ["html", "javascript"]
 		}
-	},
-	{
-		alt: "pipes",
-		image: "/dataducts.jpg",
-		title: "DataDucts",
-		body: "Webmaster for a digital transformation company.",
-		metadata: {
-			maintained: true,
-			comingSoon: true,
-			icons: ["html", "javascript"]
-		}
 	}
+	// {
+	// 	alt: "pipes",
+	// 	image: "/dataducts.jpg",
+	// 	title: "DataDucts",
+	// 	body: "Webmaster for a digital transformation company.",
+	// 	metadata: {
+	// 		maintained: true,
+	// 		comingSoon: true,
+	// 		icons: ["html", "javascript"]
+	// 	}
+	// }
 ];
 
 export default function App() {
