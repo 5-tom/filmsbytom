@@ -118,6 +118,20 @@ const projects = [
 		}
 	},
 	{
+		alt: "Archi and JavaScipt logos.",
+		image: "/jarchi-utils.png",
+		title: "jarchi-utils",
+		body: "Pure JavaScript implementations of jArchi methods.",
+		metadata: {
+			maintained: true,
+			icons: ["javascript"]
+		},
+		btn1: {
+			name: "Go to package",
+			link: "https://www.npmjs.com/package/jarchi-utils"
+		}
+	},
+	{
 		alt: "Wood Job! movie poster in windowboxd",
 		image: "/woodjob.png",
 		title: "windowboxd",
@@ -156,8 +170,8 @@ const projects = [
 	},
 	{
 		alt: "pipes",
-		image: "/dataducts.jpg",
-		title: "LittlePipelines",
+		image: "/littlepipelines.png",
+		title: "LittlePipelines (Contributor to)",
 		body: "Learn to code through pull request reviews.",
 		metadata: {
 			maintained: true,
@@ -209,7 +223,7 @@ export default function App() {
 						}
 						return (
 							<Grid item xs={12} sm={6} md={4} sx={style} key={title}>
-								<Card sx={{ maxWidth: 345 }}>
+								<Card sx={{ marginBottom: 5, maxWidth: 345 }}>
 									<CardMedia
 										component="img"
 										alt={alt}
