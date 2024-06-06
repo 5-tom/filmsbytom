@@ -38,28 +38,6 @@ const projects = [
 		}
 	},
 	{
-		alt: "kodi file structure",
-		image: "/kodi.png",
-		title: "Organise movies to the Kodi recommendation",
-		body: "Kodi recommends that movie libraries be organised like: 'Dredd (2012)' > 'Dredd (2012).mkv'. This script batch renames and batch moves your movies to conform to Kodi's recommendation",
-		btn1: {
-			name: "Read bash version",
-			link: "https://github.com/5-tom/old-scripts/blob/main/kodi"
-		},
-		btn2: {
-			name: "Read JavaScript version",
-			link: "https://github.com/5-tom/scripts-backup/blob/main/usr-local-bin/node/kodi.mjs"
-		},
-		btn3: {
-			name: "Read recommendation",
-			link: "https://kodi.wiki/view/Naming_video_files/Movies"
-		},
-		metadata: {
-			maintained: false,
-			icons: ["terminal", "javascript"]
-		}
-	},
-	{
 		alt: "mpv and filmon logos",
 		image: "/filmon.png",
 		title: "TV using mpv, IPC, socat, and filmon",
@@ -82,13 +60,17 @@ const projects = [
 		}
 	},
 	{
-		alt: "GitHub Copilot for VSCodium logos",
-		image: "/copilot.png",
-		title: "Install GitHub Copilot for VSCodium (snap)",
-		body: "The Copilot extension can't be installed for VSCodium without a little bit of hacking!",
+		alt: "Model of 3D man with magnifying glass",
+		image: "/3d_man.jpeg",
+		title: "Tab over words in text and copy to clipboard (terminal)",
+		body: "Like less and man's jump to next word, this tool lets you cycle over the words in a text file. After pressing Enter, the highlighted word is copied to your clipboard.",
 		btn1: {
-			name: "Read code",
-			link: "https://github.com/5-tom/old-scripts/blob/main/copilot.sh"
+			name: "View code",
+			link: "https://github.com/5-tom/old-scripts/blob/main/node/copy-word.mjs"
+		},
+		btn2: {
+			name: "View YouTube video",
+			link: "https://www.youtube.com/watch?v=RxdCQUplVFs"
 		},
 		metadata: {
 			maintained: false,
@@ -146,6 +128,53 @@ const projects = [
 		}
 	},
 	{
+		alt: "pipes",
+		image: "/littlepipelines.png",
+		title: "LittlePipelines (Contributor to)",
+		body: "Learn to code through pull request reviews.",
+		metadata: {
+			maintained: true,
+			comingSoon: true,
+			icons: ["html", "javascript"]
+		}
+	},
+	{
+		alt: "kodi file structure",
+		image: "/kodi.png",
+		title: "Organise movies to the Kodi recommendation",
+		body: "Kodi recommends that movie libraries be organised like: 'Dredd (2012)' > 'Dredd (2012).mkv'. This script batch renames and batch moves your movies to conform to Kodi's recommendation",
+		btn1: {
+			name: "Read bash version",
+			link: "https://github.com/5-tom/old-scripts/blob/main/kodi"
+		},
+		btn2: {
+			name: "Read JavaScript version",
+			link: "https://github.com/5-tom/scripts-backup/blob/main/usr-local-bin/node/kodi.mjs"
+		},
+		btn3: {
+			name: "Read recommendation",
+			link: "https://kodi.wiki/view/Naming_video_files/Movies"
+		},
+		metadata: {
+			maintained: false,
+			icons: ["terminal", "javascript"]
+		}
+	},
+	{
+		alt: "GitHub Copilot for VSCodium logos",
+		image: "/copilot.png",
+		title: "Install GitHub Copilot for VSCodium (snap)",
+		body: "The Copilot extension can't be installed for VSCodium without a little bit of hacking!",
+		btn1: {
+			name: "Read code",
+			link: "https://github.com/5-tom/old-scripts/blob/main/copilot.sh"
+		},
+		metadata: {
+			maintained: false,
+			icons: ["terminal", "javascript"]
+		}
+	},
+	{
 		alt: "GJS logo",
 		image: "/jsgnome.png",
 		title: "Unnamed GJS Project",
@@ -166,17 +195,6 @@ const projects = [
 		btn3: {
 			name: "GTK4 + GJS Book",
 			link: "https://rmnvgr.gitlab.io/gtk4-gjs-book/"
-		}
-	},
-	{
-		alt: "pipes",
-		image: "/littlepipelines.png",
-		title: "LittlePipelines (Contributor to)",
-		body: "Learn to code through pull request reviews.",
-		metadata: {
-			maintained: true,
-			comingSoon: true,
-			icons: ["html", "javascript"]
 		}
 	}
 	// {
@@ -223,7 +241,7 @@ export default function App() {
 						}
 						return (
 							<Grid item xs={12} sm={6} md={4} sx={style} key={title}>
-								<Card sx={{ marginBottom: 5, maxWidth: 345 }}>
+								<Card sx={{ marginBottom: 3, maxWidth: 375 }}>
 									<CardMedia
 										component="img"
 										alt={alt}
