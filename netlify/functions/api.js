@@ -13,19 +13,16 @@ import { JSDOM } from "jsdom";
 async function fares(req, res) {
   try {
     const { from, to, hour, railcard } = req.body;
-    if (from.length > 3 || to.length > 3)
-      return res.sendStatus(500);
+    if (from.length > 3 || to.length > 3) return res.sendStatus(500);
     if (isNaN(parseInt(hour)) || parseInt(hour) < 1 || parseInt(hour) > 23)
       return res.sendStatus(500);
-    if (railcard !== "on" && railcard !== void 0)
-      return res.sendStatus(500);
+    if (railcard !== "on" && railcard !== void 0) return res.sendStatus(500);
     async function getSWRDate() {
       return await fetch("https://filmsbytom.com/api/trains").then(async (res2) => {
         const { date } = (await res2.json()).bookingWindows.find(
           ({ toc }) => toc === "South Western Railway"
         );
-        if (!date)
-          throw new Error();
+        if (!date) throw new Error();
         return date;
       }).catch(() => res.sendStatus(500));
     }
@@ -48,9 +45,9 @@ async function fares(req, res) {
       const smalls = Array.from(
         DOM.window.document.querySelectorAll("small")
       );
-      let fares3 = smalls.map((small) => {
+      let fares3 = smalls.flatMap((small) => {
         const words = small.innerHTML.split(" ");
-        return words.find((word) => word.startsWith("\xA3"));
+        return words.filter((word) => word.startsWith("\xA3"));
       }).filter((fare) => fare !== void 0).map((fare) => parseFloat(fare.split("\xA3")[1]));
       return Math.min(...fares3);
     };

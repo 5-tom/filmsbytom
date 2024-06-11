@@ -45,9 +45,9 @@ export async function fares(req: Request, res: Response) {
 				DOM.window.document.querySelectorAll("small")
 			);
 			let fares: Array<number> = smalls
-				.map((small) => {
+				.flatMap((small) => {
 					const words = small.innerHTML.split(" ");
-					return words.find((word) => word.startsWith("£"));
+					return words.filter((word) => word.startsWith("£"));
 				})
 				.filter((fare) => fare !== undefined)
 				.map((fare) => parseFloat(fare!.split("£")[1]));
