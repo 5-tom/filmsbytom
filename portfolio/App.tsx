@@ -219,7 +219,6 @@ export default function App() {
 					<Button href="/" variant="contained">
 						Go back to Home
 					</Button>
-					<h3>Write-ups for my TypeScript and webdev projects coming soon!</h3>
 				</Grid>
 				{projects.map(
 					({ alt, image, title, body, btn1, btn2, btn3, metadata }, index) => {

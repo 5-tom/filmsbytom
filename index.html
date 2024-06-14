@@ -10,8 +10,12 @@
 				background-color: #fbf1c7;
 				margin: 0;
 			}
+			@font-face {
+				font-family: JetBrainsMonoMedium;
+				src: url(JetBrainsMono-Medium.woff2);
+			}
 			* {
-				font-family: sans-serif;
+				font-family: JetBrainsMonoMedium, sans-serif;
 			}
 			.grid-container {
 				display: grid;
@@ -65,43 +69,42 @@
 				z-index: 1;
 			"
 		>
-			<h1 style="margin: 0; padding: 10px">Tom Honour</h1>
+			<h1 style="margin: 0; padding: 10px">filmsbytom</h1>
 		</nav>
-		<h2>
-			If you're an employer you probably want
-			<a href="/portfolio">my portfolio</a>
-		</h2>
 		<div class="grid-container">
 			<div class="item1" style="position: relative">
 				<img src="./photo.jpeg" style="border-radius: 50%" />
 				<h1>Tom Honour</h1>
 				<h3>Software Engineer</h3>
-				<div>
-					<a href="mailto:tom5@posteo.net"
-						><img src="./internet-mail.png" class="grow"
-					/></a>
-					<a href="https://github.com/5-tom"
-						><img src="./github.png" class="grow"
-					/></a>
-					<a href="https://www.youtube.com/@filmsbytom6"
-						><img src="./youtube.png" class="grow"
-					/></a>
-					<a href="https://www.linkedin.com/in/tom-h-40481122b"
-						><img src="./linkedin.png" class="grow"
-					/></a>
-					<a href="https://gist.github.com/5-tom"
-						><img src="./github.png" class="grow"
-					/></a>
-					<a href="https://www.npmjs.com/~tomhonour"
-						><img src="./npm.png" class="grow"
-					/></a>
+				<div style="margin-bottom: 1em">
+					<a href="/portfolio">My portfolio</a><br />
 					<a href="https://filmsbytom.mataroa.blog">My blog</a>
 				</div>
+				<div>
+					<a href="mailto:tom5@posteo.net"
+						><img src="./mail.svg" class="grow"
+					/></a>
+					<a href="https://github.com/5-tom"
+						><img src="./brand-github.svg" class="grow"
+					/></a>
+					<a href="https://www.youtube.com/@filmsbytom6"
+						><img src="./brand-youtube.svg" class="grow"
+					/></a>
+					<a href="https://www.linkedin.com/in/tom-h-40481122b"
+						><img src="./brand-linkedin.svg" class="grow"
+					/></a>
+					<a href="https://www.npmjs.com/~tomhonour"
+						><img src="./brand-npm.svg" class="grow"
+					/></a>
+					<a href="https://news.ycombinator.com/user?id=tomhonour"
+						><img src="./brand-ycombinator.svg" class="grow"
+					/></a>
+				</div>
 			</div>
-			<!-- <div class="item2">
+			<div class="item2">
 				<h1>Biography</h1>
 				<p>Tom Honour is...</p>
-			</div> -->
+			</div>
 			<div class="item3">
 				<h1>Interests</h1>
 				<ul>
@@ -121,7 +124,7 @@
 					"
 				>
 					<div>
-						<i class="bi-mortarboard-fill icon"></i>
+						<img src="./school.svg" class="icon" />
 					</div>
 					<div>
 						<span style="font-weight: bold"
@@ -129,7 +132,7 @@
 						>
 					</div>
 					<div>
-						<i class="bi-mortarboard-fill icon"></i>
+						<img src="./school.svg" class="icon" />
 					</div>
 					<div>
 						<span style="font-weight: bold">B.S. in Biology, 2022</span><br />
@@ -140,13 +143,17 @@
 		</div>
 		<div style="padding: 0 20px">
 			<!-- <ul id="trains"></ul> -->
-			<h1 id="firstheading">My APIs</h1>
+			<h1 id="firstheading">My External APIs</h1>
 			<ol>
 				<li><a href="/api/trains">Advance train ticket booking window</a></li>
 			</ol>
 		</div>
-		<div style="padding: 0 20px">
-			<h1>Learn</h1>
+		<details style="padding: 0 20px">
+			<summary>
+				<h1 style="display: inline; cursor: pointer">
+					My Recommended Learning Resources
+				</h1>
+			</summary>
 
 			<h2>GNU/Linux</h2>
 			<ul>
@@ -191,10 +198,10 @@
 			</ul>
 
 			<hr />
-			<h2>all</h2>
+			<!-- <h2>all</h2>
 			<ul>
 				<li><a href="https://fullstackopen.com/en">Full stack open</a></li>
-			</ul>
+			</ul> -->
 
 			<h2>JavaScript & TypeScript</h2>
 			<ul>
@@ -204,7 +211,7 @@
 						>'TypeScript - The Basics'</a
 					>
 				</li>
-				<li>...</li>
+				<!-- <li>...</li> -->
 			</ul>
 
 			<h2>React</h2>
@@ -295,7 +302,9 @@
 					<th>Software</th>
 				</tr>
 				<tr>
-					<td></td>
+					<td>
+						<!-- <a href="https://www.mailmanlists.net">MailmanLists</a> -->
+					</td>
 					<td>
 						<a href="https://github.com/cstate/cstate">cstate</a>
 					</td>
@@ -377,7 +386,7 @@
 					>
 				</li>
 			</ul>
-		</div>
+		</details>
 		<footer style="text-align: center; padding-bottom: 10px">
 			© 2023 Tom Honour.
 			<a href="https://creativecommons.org/licenses/by-nc-sa/4.0"
